@@ -1,7 +1,8 @@
 import { ComputadoresService } from './../computadores.service';
 import { Computador } from '../computador';
 import { Component, OnInit } from '@angular/core';
-import { preserveWhitespacesDefault } from '@angular/compiler';
+import { Observable, empty, Subject } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-computadores-lista',
@@ -10,12 +11,27 @@ import { preserveWhitespacesDefault } from '@angular/compiler';
   preserveWhitespaces:true
 })
 export class ComputadoresListaComponent implements OnInit {
-  computadores:Computador[];
+  
+  //computadores:Computador[];
+  computadores$:Observable<Computador[]>;
+
+  error$ = new Subject<boolean>();
 
   constructor(private service:ComputadoresService) { }
 
   ngOnInit(): void {
-    this.service.list().subscribe(dados=>this.computadores=dados);
+    //this.service.list().subscribe(dados=>this.computadores=dados);
+    
+    this.onRefresh();
+  }
+  onRefresh(){
+    this.computadores$=this.service.list().pipe(
+      catchError(erro=>{
+        console.error(erro);
+        this.error$.next(true);
+        return empty();
+      })
+      );
   }
 
 }

@@ -2,11 +2,11 @@
     <div class="card-header">
         <div class="float-left">
             <button type="button" class="btn btn-success" [routerLink]="['novo']">Novo Computador</button>
-            <button type="button" class="btn btn-primary">Atualizar</button>
+            <button type="button" class="btn btn-primary" (click)="onRefresh()">Atualizar</button>
         </div>
     </div>
     <div class="card-body">
-        <table class="table table-bordered">
+        <table class="table table-bordered" *ngIf="(computadores$ | async) as computadores; else loading">
             <thead>
                 <tr style="font-size:17px">
                     <th>Identificador</th>
@@ -35,10 +35,18 @@
                     <button class="btn btn-outline-danger mb-1 btn-sm" >
                       Remover
                     </button>
-                  </span>
+                </span>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <ng-template #loading>
+            <div *ngIf="error$ | async; else loadingNoError" class="alert-danger">
+                Falha ao carregar os registros dos computadores, tente novamente mais tarde...
+            </div>
+            <ng-template #loadingNoError>
+                <span>Carregando Computadores...</span>
+            </ng-template>
+        </ng-template>
     </div>
 </div>
