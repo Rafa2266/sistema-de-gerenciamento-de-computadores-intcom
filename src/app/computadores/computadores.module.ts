@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { ComputadoresRoutingModule } from './computadores-routing.module';
 import { ComputadoresListaComponent } from './computadores-lista/computadores-lista.component';
+import { ComputadoresFormComponent } from './computadores-form/computadores-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ComputadoresListaComponent],
+  declarations: [ComputadoresListaComponent, ComputadoresFormComponent],
   imports: [
     CommonModule,
-    ComputadoresRoutingModule
+    ComputadoresRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ComputadoresModule { }

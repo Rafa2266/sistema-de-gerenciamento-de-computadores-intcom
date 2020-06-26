@@ -1,6 +1,7 @@
 {
     "computadores": [{
         "id": 1,
+        "numeroDeSerie": "123WERD67",
         "placaMaeMarca": "AMD",
         "placaMaeModelo": "GigaByte",
         "RAMquantidade": 2,
@@ -13,6 +14,7 @@
         "processadorVelocidade": 2.9
     }, {
         "id": 2,
+        "numeroDeSerie": "123WER5897",
         "placaMaeMarca": "AMD",
         "placaMaeModelo": "GigaByte",
         "RAMquantidade": 1,

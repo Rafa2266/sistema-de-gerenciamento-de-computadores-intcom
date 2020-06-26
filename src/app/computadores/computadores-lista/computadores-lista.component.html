@@ -1,7 +1,7 @@
 <div class="card" style="width: max-content;">
     <div class="card-header">
         <div class="float-left">
-            <button type="button" class="btn btn-success" [routerLink]="['novo']">Novo Computador</button>
+            <button type="button" class="btn btn-success" [routerLink]="['novoComputador']">Novo Computador</button>
             <button type="button" class="btn btn-primary" (click)="onRefresh()">Atualizar</button>
         </div>
     </div>
@@ -9,7 +9,7 @@
         <table class="table table-bordered" *ngIf="(computadores$ | async) as computadores; else loading">
             <thead>
                 <tr style="font-size:17px">
-                    <th>Identificador</th>
+                    <th>Numero de Série</th>
                     <th>Placa mãe</th>
                     <th>Memória RAM</th>
                     <th>HD</th>
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let computador of computadores" style="font-size:15px">
-                    <td>{{ computador.id }}</td>
+                    <td>{{ computador.numeroDeSerie }}</td>
                     <td><strong>Marca:</strong> {{ computador.placaMaeMarca }}<br> <strong>Modelo:</strong> {{ computador.placaMaeModelo }} </td>
                     <td><strong>Quantidade:</strong> {{computador.RAMquantidade}}<br> <strong>Capacidade Total:</strong> {{computador.RAMcapacidadeTotal}}GB </td>
                     <td><strong>Quantidade:</strong> {{computador.HDquantidade}}<br> <strong>Capacidade Total:</strong> {{computador.HDcapacidadeTotal}}TB</td>
