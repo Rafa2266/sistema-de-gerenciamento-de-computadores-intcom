@@ -1,0 +1,15 @@
+{
+    "computadores": [{
+        "id": 1,
+        "placaMae-marca": "AMD",
+        "placaMae-modelo": "GigaByte",
+        "RAM-quantidade": 2,
+        "RAM-capacidadeTotal:": 8,
+        "HD-quantidade": 1,
+        "HD-capacidadeTotal:": 1,
+        "fonte-marca": "Corsair",
+        "fonte-modelo": "CX650",
+        "processador-marca": "Intel",
+        "processador-velocidade": 2.9
+    }]
+}

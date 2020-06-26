@@ -144,6 +144,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cadastro-computador"
+    }
+  },
+  "defaultProject": "cadastro-computador",
+  "cli": {
+    "analytics": "4f0ca02f-c011-4380-8f5f-d12c99e623b4"
+  }
 }
