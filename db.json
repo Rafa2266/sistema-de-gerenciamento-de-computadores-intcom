@@ -1,15 +1,27 @@
 {
     "computadores": [{
         "id": 1,
-        "placaMae-marca": "AMD",
-        "placaMae-modelo": "GigaByte",
-        "RAM-quantidade": 2,
-        "RAM-capacidadeTotal:": 8,
-        "HD-quantidade": 1,
-        "HD-capacidadeTotal:": 1,
-        "fonte-marca": "Corsair",
-        "fonte-modelo": "CX650",
-        "processador-marca": "Intel",
-        "processador-velocidade": 2.9
+        "placaMaeMarca": "AMD",
+        "placaMaeModelo": "GigaByte",
+        "RAMquantidade": 2,
+        "RAMcapacidadeTotal": 8,
+        "HDquantidade": 1,
+        "HDcapacidadeTotal": 1,
+        "fonteMarca": "Corsair",
+        "fonteModelo": "CX650",
+        "processadorMarca": "Intel",
+        "processadorVelocidade": 2.9
+    }, {
+        "id": 2,
+        "placaMaeMarca": "AMD",
+        "placaMaeModelo": "GigaByte",
+        "RAMquantidade": 1,
+        "RAMcapacidadeTotal": 4,
+        "HDquantidade": 2,
+        "HDcapacidadeTotal": 2,
+        "fonteMarca": "Corsair",
+        "fonteModelo": "CX650",
+        "processadorMarca": "Intel",
+        "processadorVelocidade": 4.5
     }]
 }

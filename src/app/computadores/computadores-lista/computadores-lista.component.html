@@ -1,1 +1,44 @@
-<p>computadores-lista works!</p>
+<div class="card" style="width: max-content;">
+    <div class="card-header">
+        <div class="float-left">
+            <button type="button" class="btn btn-success" [routerLink]="['novo']">Novo Computador</button>
+            <button type="button" class="btn btn-primary">Atualizar</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="font-size:17px">
+                    <th>Identificador</th>
+                    <th>Placa mãe</th>
+                    <th>Memória RAM</th>
+                    <th>HD</th>
+                    <th>Processador</th>
+                    <th>Fonte</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let computador of computadores" style="font-size:15px">
+                    <td>{{ computador.id }}</td>
+                    <td><strong>Marca:</strong> {{ computador.placaMaeMarca }}<br> <strong>Modelo:</strong> {{ computador.placaMaeModelo }} </td>
+                    <td><strong>Quantidade:</strong> {{computador.RAMquantidade}}<br> <strong>Capacidade Total:</strong> {{computador.RAMcapacidadeTotal}}GB </td>
+                    <td><strong>Quantidade:</strong> {{computador.HDquantidade}}<br> <strong>Capacidade Total:</strong> {{computador.HDcapacidadeTotal}}TB</td>
+                    <td><strong>Marca:</strong> {{ computador.processadorMarca }}<br> <strong>Velocidade:</strong> {{ computador.processadorVelocidade }}GHz</td>
+                    <td><strong>Marca:</strong> {{ computador.fonteMarca }}<br> <strong>Modelo:</strong> {{ computador.fonteModelo }}</td>
+                    <td>
+                        <span class="float-right">
+                    <button class="btn btn-outline-warning mb-1 btn-sm" >
+                      Modificar
+                    </button>
+      
+                    <button class="btn btn-outline-danger mb-1 btn-sm" >
+                      Remover
+                    </button>
+                  </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
