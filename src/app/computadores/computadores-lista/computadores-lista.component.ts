@@ -12,7 +12,6 @@ import { catchError } from 'rxjs/operators';
 })
 export class ComputadoresListaComponent implements OnInit {
   
-  //computadores:Computador[];
   computadores$:Observable<Computador[]>;
 
   error$ = new Subject<boolean>();

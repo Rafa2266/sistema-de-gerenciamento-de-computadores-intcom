@@ -2,7 +2,7 @@ import { environment } from './../../environments/environment';
 import { Computador } from './computador';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap, delay } from 'rxjs/operators';
+import { tap, delay,take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +14,9 @@ export class ComputadoresService {
 
     list(){
       return this.http.get<Computador[]>(this.API).pipe(delay(2000), tap(console.log));
+    }
+    create(computador:Computador){
+      return this.http.post(this.API,computador).pipe(take(1));
     }
   
   };

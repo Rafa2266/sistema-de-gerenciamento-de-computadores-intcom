@@ -1,17 +1,23 @@
+import { AlertModalService } from './../../shared/alert-modal.service';
+import { ComputadoresService } from './../computadores.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-computadores-form',
   templateUrl: './computadores-form.component.html',
-  styleUrls: ['./computadores-form.component.css']
+  styleUrls: ['./computadores-form.component.css'],
+  preserveWhitespaces:true
 })
 export class ComputadoresFormComponent implements OnInit {
 
   form: FormGroup
   submitted=false;
+  
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private service:ComputadoresService,private modal:AlertModalService,
+    private location:Location) { }
 
   ngOnInit(): void {
    this.form=this.fb.group({
@@ -29,10 +35,25 @@ export class ComputadoresFormComponent implements OnInit {
     })
   }
   onSubmit(){
+   
     this.submitted=true;
     console.log(this.form.value)
     if(this.form.valid){
         console.log("submit")
+        this.service.create(this.form.value).subscribe(
+        sucess=>{
+          this.modal.showAlertSuccess("Computador cadastrado com sucesso");
+          this.form.reset();
+          this.submitted=false;
+          this.location.back();
+        },
+        error=>this.modal.showAlertDanger("Erro ao cadastrar computador, tente novamente mais tarde"),
+        ()=>console.log("request completo") );
+        
+      
+            
+        
+        
       }
   }
   onCancel(){
