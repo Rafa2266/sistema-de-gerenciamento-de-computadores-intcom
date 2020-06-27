@@ -3,6 +3,7 @@ import { Computador } from '../computador';
 import { Component, OnInit } from '@angular/core';
 import { Observable, empty, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-computadores-lista',
@@ -16,7 +17,7 @@ export class ComputadoresListaComponent implements OnInit {
 
   error$ = new Subject<boolean>();
 
-  constructor(private service:ComputadoresService) { }
+  constructor(private service:ComputadoresService, private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     //this.service.list().subscribe(dados=>this.computadores=dados);
@@ -31,6 +32,9 @@ export class ComputadoresListaComponent implements OnInit {
         return empty();
       })
       );
+  }
+  onEdit(id){
+     this.router.navigate(['eidtarComputador',id], { relativeTo: this.route })
   }
 
 }

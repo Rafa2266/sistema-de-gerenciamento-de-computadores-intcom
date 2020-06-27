@@ -71,6 +71,7 @@
       "id": 5
     },
     {
+      "id": 6,
       "numeroDeSerie": "12131SD45",
       "placaMaeMarca": "NVDIA",
       "placaMaeModelo": "GTX-900",
@@ -78,11 +79,10 @@
       "RAMcapacidadeTotal": 3,
       "HDquantidade": 2,
       "HDcapacidadeTotal": 3,
-      "fonteMarca": "4",
-      "fonteModelo": "6",
-      "processadorMarca": "4",
-      "processadorVelocidade": 5,
-      "id": 6
+      "fonteMarca": "Card",
+      "fonteModelo": "XTC98",
+      "processadorMarca": "AMD",
+      "processadorVelocidade": 5
     },
     {
       "numeroDeSerie": "12131SD55",
@@ -111,6 +111,20 @@
       "processadorMarca": "AMD",
       "processadorVelocidade": 7.9,
       "id": 8
+    },
+    {
+      "id": 9,
+      "numeroDeSerie": "12131SD455",
+      "placaMaeMarca": "NVDIA",
+      "placaMaeModelo": "GTX-900",
+      "RAMquantidade": 2,
+      "RAMcapacidadeTotal": 3,
+      "HDquantidade": 3,
+      "HDcapacidadeTotal": 5,
+      "fonteMarca": "Card",
+      "fonteModelo": "XTC98",
+      "processadorMarca": "3",
+      "processadorVelocidade": 5
     }
   ]
 }

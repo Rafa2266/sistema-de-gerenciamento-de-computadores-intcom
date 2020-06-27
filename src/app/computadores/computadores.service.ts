@@ -18,6 +18,12 @@ export class ComputadoresService {
     create(computador:Computador){
       return this.http.post(this.API,computador).pipe(take(1));
     }
+    loadByID(id){
+      return this.http.get(`${this.API}/${id}`).pipe(take(1))
+    }
+    update(computador){
+         return this.http.put(`${this.API}/${computador.id}`,computador).pipe(take(1));
+    }
   
   };
 

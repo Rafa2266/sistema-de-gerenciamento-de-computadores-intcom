@@ -28,7 +28,7 @@
                     <td><strong>Marca:</strong> {{ computador.fonteMarca }}<br> <strong>Modelo:</strong> {{ computador.fonteModelo }}</td>
                     <td>
                         <span class="float-right">
-                    <button class="btn btn-outline-warning mb-1 btn-sm" >
+                    <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(computador.id)">
                       Modificar
                     </button>
       
