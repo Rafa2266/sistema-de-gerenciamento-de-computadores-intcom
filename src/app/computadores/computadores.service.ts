@@ -21,8 +21,11 @@ export class ComputadoresService {
     loadByID(id){
       return this.http.get(`${this.API}/${id}`).pipe(take(1))
     }
-    update(computador){
+    update(computador:Computador){
          return this.http.put(`${this.API}/${computador.id}`,computador).pipe(take(1));
+    }
+    remove(id){
+      return this.http.delete(`${this.API}/${id}`).pipe(take(1));
     }
   
   };

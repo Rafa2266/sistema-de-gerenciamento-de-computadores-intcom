@@ -173,13 +173,17 @@
     </div>
     <div style="margin-top: 10px; margin-bottom: 50px;">
         <button type="sumit" class="btn btn-primary" (click)="onSubmit()">
-      Salvar
+      <div *ngIf="!updatedFormulario">Adicionar novo computador</div><div *ngIf="updatedFormulario">Salvar</div>
     </button>
         <button type="button" class="btn btn-danger" (click)="onCancel()">
       Cancelar
     </button>
-        <a href="computadores"><button type="button" class="btn btn-secondary">
+
+        <a href="computadores" *ngIf="!updatedFormulario">
+            <button type="button" class="btn btn-secondary">
         Voltar
-      </button></a>
+      </button>
+        </a>
+
     </div>
 </form>

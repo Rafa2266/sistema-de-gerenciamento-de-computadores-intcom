@@ -32,7 +32,7 @@
                       Modificar
                     </button>
       
-                    <button class="btn btn-outline-danger mb-1 btn-sm" >
+                    <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(computador)">
                       Remover
                     </button>
                 </span>
@@ -42,7 +42,7 @@
         </table>
         <ng-template #loading>
             <div *ngIf="error$ | async; else loadingNoError" class="alert-danger">
-                Falha ao carregar os registros dos computadores, tente novamente mais tarde...
+                Falha ao carregar os registros dos computadores, tente novamente mais tarde
             </div>
             <ng-template #loadingNoError>
                 <span>Carregando Computadores...</span>
@@ -50,3 +50,11 @@
         </ng-template>
     </div>
 </div>
+
+<ng-template #deleteModal>
+    <div class="modal-body text-center">
+        <p>Tem certeza que deseja apagar o registro do computador</p>
+        <button type="button" class="btn btn-default" (click)="onConfirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">Não</button>
+    </div>
+</ng-template>

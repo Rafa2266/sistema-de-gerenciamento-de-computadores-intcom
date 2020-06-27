@@ -16,7 +16,9 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class ComputadoresFormComponent implements OnInit {
   form: FormGroup;
+  updatedFormulario = false;
   submitted = false;
+  
 
   constructor(
     private fb: FormBuilder,
@@ -32,7 +34,10 @@ export class ComputadoresFormComponent implements OnInit {
         map((params: any) => params['id']),
         switchMap((id) => this.service.loadByID(id))
       )
-      .subscribe((computador) => this.updateForm(computador));
+      .subscribe((computador) => {
+        this.updateForm(computador)
+        
+      });
 
     this.form = this.fb.group({
       id: [null],
@@ -50,6 +55,7 @@ export class ComputadoresFormComponent implements OnInit {
     });
   }
   updateForm(computador) {
+    this.updatedFormulario=true;
     this.form.setValue({
       id: computador.id,
       numeroDeSerie: computador.numeroDeSerie,
@@ -80,6 +86,7 @@ export class ComputadoresFormComponent implements OnInit {
           },
           ()=>console.log("update completo")
         );
+        this.updatedFormulario=false;
       } else {
         console.log('submit');
         this.service.create(this.form.value).subscribe(
@@ -101,8 +108,12 @@ export class ComputadoresFormComponent implements OnInit {
 
   onCancel() {
     this.submitted = false;
+     if (this.form.value.id){
+      this.location.back();
+    }
     this.form.reset();
     console.log('cancelado');
+   
   }
   hasError(field: string) {
     return this.form.get(field).errors;

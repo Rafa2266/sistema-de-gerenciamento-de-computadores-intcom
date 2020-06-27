@@ -57,20 +57,6 @@
       "id": 4
     },
     {
-      "numeroDeSerie": "12131SDFG",
-      "placaMaeMarca": "NVDIA",
-      "placaMaeModelo": "GTX-900",
-      "RAMquantidade": 2,
-      "RAMcapacidadeTotal": 5,
-      "HDquantidade": 4,
-      "HDcapacidadeTotal": 6,
-      "fonteMarca": "DERT",
-      "fonteModelo": "XTC98",
-      "processadorMarca": "AMD",
-      "processadorVelocidade": 3,
-      "id": 5
-    },
-    {
       "id": 6,
       "numeroDeSerie": "12131SD45",
       "placaMaeMarca": "NVDIA",
@@ -85,6 +71,7 @@
       "processadorVelocidade": 5
     },
     {
+      "id": 7,
       "numeroDeSerie": "12131SD55",
       "placaMaeMarca": "3",
       "placaMaeModelo": "2",
@@ -92,11 +79,10 @@
       "RAMcapacidadeTotal": 2,
       "HDquantidade": 2,
       "HDcapacidadeTotal": 2,
-      "fonteMarca": "2",
-      "fonteModelo": "2",
-      "processadorMarca": "2",
-      "processadorVelocidade": 2,
-      "id": 7
+      "fonteMarca": "Cisoair",
+      "fonteModelo": "XTC98",
+      "processadorMarca": "Intel",
+      "processadorVelocidade": 2
     },
     {
       "numeroDeSerie": "12131SDF09",
@@ -114,17 +100,17 @@
     },
     {
       "id": 9,
-      "numeroDeSerie": "12131SD455",
+      "numeroDeSerie": "12131SDGT6",
       "placaMaeMarca": "NVDIA",
-      "placaMaeModelo": "GTX-900",
+      "placaMaeModelo": "GTX-936",
       "RAMquantidade": 2,
-      "RAMcapacidadeTotal": 3,
+      "RAMcapacidadeTotal": 8,
       "HDquantidade": 3,
-      "HDcapacidadeTotal": 5,
-      "fonteMarca": "Card",
+      "HDcapacidadeTotal": 3,
+      "fonteMarca": "DERT",
       "fonteModelo": "XTC98",
-      "processadorMarca": "3",
-      "processadorVelocidade": 5
+      "processadorMarca": "AMD",
+      "processadorVelocidade": 2.8
     }
   ]
 }
