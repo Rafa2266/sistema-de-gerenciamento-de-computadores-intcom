@@ -27,6 +27,9 @@ export class ComputadoresService {
     remove(id){
       return this.http.delete(`${this.API}/${id}`).pipe(take(1));
     }
+    load(){
+      return this.http.get<Computador[]>(this.API).pipe(take(1))
+    }
   
   };
 
