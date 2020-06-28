@@ -132,8 +132,6 @@ export class ComputadoresFormComponent implements OnInit {
     return this.form.get(field).errors;
   }
   VerificarNumeroDeSerieCreate(verificado: String) {
-    
-
     for (let computador of this.computadores) {
       if (computador.numeroDeSerie == verificado) {
         return true;
