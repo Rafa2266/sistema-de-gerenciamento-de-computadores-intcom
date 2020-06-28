@@ -1,12 +1,15 @@
-<div class="card" style="width: max-content;">
+<div class="card" style="width:max-content">
     <div class="card-header">
-        <div class="float-left">
+        <div class="float-left" style="font-size:22px;">
             <button type="button" class="btn btn-success" [routerLink]="['novoComputador']">Novo Computador</button>
-            <button type="button" class="btn btn-primary" (click)="onRefresh()">Atualizar</button>
+            <button type="button" class="btn btn-primary" (click)="onRefresh()">Atualizar</button> Filtrar:
+            <input type=text (keyup)="onKeyUp($event)" style="font-size:15px;" />
+            <p style="font-size:15px;margin-top:10px;">Para pesquisar por números utilize o formato para quantidade(1RAM,1HD) e para capacidade ou velocidade(1GB,1TB,1GHz).</p>
         </div>
     </div>
     <div class="card-body">
         <table class="table table-bordered" *ngIf="(computadores$ | async) as computadores; else loading">
+
             <thead>
                 <tr style="font-size:17px">
                     <th>Numero de Série</th>
@@ -18,14 +21,16 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let computador of computadores" style="font-size:15px">
+            <tbody *ngFor="let computador of computadores">
+                <tr *ngIf="onFiltro(computador)" style="font-size:15px">
+
                     <td>{{ computador.numeroDeSerie }}</td>
                     <td><strong>Marca:</strong> {{ computador.placaMaeMarca }}<br> <strong>Modelo:</strong> {{ computador.placaMaeModelo }} </td>
                     <td><strong>Quantidade:</strong> {{computador.RAMquantidade}}<br> <strong>Capacidade Total:</strong> {{computador.RAMcapacidadeTotal}}GB </td>
                     <td><strong>Quantidade:</strong> {{computador.HDquantidade}}<br> <strong>Capacidade Total:</strong> {{computador.HDcapacidadeTotal}} TB</td>
                     <td><strong>Marca:</strong> {{ computador.processadorMarca }}<br> <strong>Velocidade:</strong> {{ computador.processadorVelocidade }}GHz</td>
                     <td><strong>Marca:</strong> {{ computador.fonteMarca }}<br> <strong>Modelo:</strong> {{ computador.fonteModelo }}</td>
+
                     <td>
                         <span class="float-right">
                     <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(computador.id)">
@@ -37,8 +42,10 @@
                     </button>
                 </span>
                     </td>
+
                 </tr>
             </tbody>
+
         </table>
         <ng-template #loading>
             <div *ngIf="error$ | async; else loadingNoError" class="alert-danger">

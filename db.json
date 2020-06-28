@@ -29,6 +29,7 @@
       "processadorVelocidade": 4.5
     },
     {
+      "id": 3,
       "numeroDeSerie": "12131SDFG",
       "placaMaeMarca": "NVDIA",
       "placaMaeModelo": "GTX-900",
@@ -39,8 +40,7 @@
       "fonteMarca": "Card",
       "fonteModelo": "XTC98",
       "processadorMarca": "AMD",
-      "processadorVelocidade": 5.7,
-      "id": 3
+      "processadorVelocidade": 5.7
     },
     {
       "numeroDeSerie": "12131SDF2",
@@ -69,20 +69,6 @@
       "fonteModelo": "XTC98",
       "processadorMarca": "AMD",
       "processadorVelocidade": 5
-    },
-    {
-      "id": 7,
-      "numeroDeSerie": "12131SD55",
-      "placaMaeMarca": "3",
-      "placaMaeModelo": "2",
-      "RAMquantidade": 2,
-      "RAMcapacidadeTotal": 2,
-      "HDquantidade": 2,
-      "HDcapacidadeTotal": 2,
-      "fonteMarca": "Cisoair",
-      "fonteModelo": "XTC98",
-      "processadorMarca": "Intel",
-      "processadorVelocidade": 2
     },
     {
       "numeroDeSerie": "12131SDF09",

@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, empty, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
-import { error } from 'protractor';
+
 
 @Component({
   selector: 'app-computadores-lista',
@@ -21,7 +21,8 @@ export class ComputadoresListaComponent implements OnInit {
   delteModalRef:BsModalRef;
   @ViewChild('deleteModal') deleteModal;
   computadorSelecionado:Computador;
-
+  filtragemAtual:string='';
+   
   constructor(
     private service: ComputadoresService,
     private router: Router,
@@ -43,7 +44,8 @@ export class ComputadoresListaComponent implements OnInit {
         return empty();
       })
     );
-  }
+           
+    }
   onEdit(id) {
     this.router.navigate(['eidtarComputador', id], { relativeTo: this.route });
   }
@@ -64,5 +66,20 @@ export class ComputadoresListaComponent implements OnInit {
   }
   onDeclineDelete(){
     this.delteModalRef.hide();
+  }
+  onKeyUp(evento:KeyboardEvent){
+        this.filtragemAtual=((<HTMLInputElement>evento.target).value).toLowerCase();
+  }
+  onFiltro(computador:Computador){
+       if(this.filtragemAtual==''||this.filtragemAtual==computador.numeroDeSerie.toLowerCase()||this.filtragemAtual==computador.placaMaeMarca.toLowerCase()||
+       this.filtragemAtual==computador.placaMaeModelo.toLowerCase()||this.filtragemAtual==(`${computador.RAMquantidade}RAM`).toLowerCase()
+       ||this.filtragemAtual==(`${computador.RAMcapacidadeTotal}GB`).toLowerCase()||this.filtragemAtual==(`${computador.HDquantidade}HD`).toLowerCase()
+       ||this.filtragemAtual==(`${computador.HDcapacidadeTotal}TB`).toLowerCase()||this.filtragemAtual==computador.processadorMarca.toLowerCase()
+       ||this.filtragemAtual==(`${computador.processadorVelocidade}GHz`).toLowerCase()||this.filtragemAtual==computador.fonteMarca.toLowerCase()
+       ||this.filtragemAtual==computador.fonteModelo.toLowerCase()){
+         return true
+       }else{
+         return false
+       }
   }
 }
