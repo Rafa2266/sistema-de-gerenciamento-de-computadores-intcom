@@ -1,59 +1,45 @@
 <form class="needs-validation" novalidate [formGroup]="form" style="padding-top: 15px;">
     <div class="form-row">
         <div class="col-md-4 mb-3">
-            <label for="numeroDeSerie"><strong style="font-size: 20px;">Número de série:</strong></label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="numeroDeSerie"
-        formControlName="numeroDeSerie"
-        placeholder="Número de série"
-        [ngClass]="{
+            <label for="numeroDeSerie"><strong style="font-size: 20px;">Número de série:</strong></label>
+            <input type="text" class="form-control" id="numeroDeSerie" formControlName="numeroDeSerie" placeholder="Número de série" maxlength="30" [ngClass]="{
           'is-invalid': submitted && hasError('numeroDeSerie')
-        }"
-      />
-      <div
-        class="invalid-feedback"
-        *ngIf="
+        }" />
+            <div class="invalid-feedback" *ngIf="
           hasError('numeroDeSerie') && hasError('numeroDeSerie')['required']
-        "
-      >
-        Informe um número de série
-      </div>
+        ">
+                Informe um número de série
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="card">
-    <h3 class="card-header" style="background-color: rgb(20, 107, 207);">
-      Placa mãe
-    </h3>
-    <div
-      class="form-row card-body"
-      style="background-color: rgb(234, 239, 245);"
-    >
-      <div class="col-md-4 mb-3">
-        <label for="placaMaeMarca">Marca:</label>
-            <input type="text" class="form-control" id="placaMaeMarca" formControlName="placaMaeMarca" placeholder="Marca da placa mãe" [ngClass]="{
+    <div class="card">
+        <h3 class="card-header" style="background-color: rgb(20, 107, 207);">
+            Placa mãe
+        </h3>
+        <div class="form-row card-body" style="background-color: rgb(234, 239, 245);">
+            <div class="col-md-4 mb-3">
+                <label for="placaMaeMarca">Marca:</label>
+                <input type="text" class="form-control" id="placaMaeMarca" formControlName="placaMaeMarca" placeholder="Marca da placa mãe" maxlength="15" [ngClass]="{
             'is-invalid': submitted && hasError('placaMaeMarca')
           }" />
-            <div class="invalid-feedback" *ngIf="
+                <div class="invalid-feedback" *ngIf="
             hasError('placaMaeMarca') && hasError('placaMaeMarca')['required']
           ">
-                Informe a marca da placa mãe
+                    Informe a marca da placa mãe
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <label for="placaMaeModelo">Modelo:</label>
-            <input type="text" class="form-control" id="placaMaeModelo" formControlName="placaMaeModelo" placeholder="Modelo da placa mãe" [ngClass]="{
+            <div class="col-md-4 mb-3">
+                <label for="placaMaeModelo">Modelo:</label>
+                <input type="text" class="form-control" id="placaMaeModelo" formControlName="placaMaeModelo" placeholder="Modelo da placa mãe" maxlength="25" [ngClass]="{
             'is-invalid': submitted && hasError('placaMaeModelo')
           }" />
-            <div class="invalid-feedback" *ngIf="
+                <div class="invalid-feedback" *ngIf="
             hasError('placaMaeModelo') && hasError('placaMaeModelo')['required']
           ">
-                Informe o modelo da placa mãe
+                    Informe o modelo da placa mãe
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="card" style="margin-top: 20px;">
@@ -63,7 +49,7 @@
         <div class="form-row card-body" style="background-color: rgb(234, 239, 245);">
             <div class="col-md-4 mb-3">
                 <label for="RAMquantidade">Quantidade:</label>
-                <input type="number" class="form-control" id="RAMquantidade" formControlName="RAMquantidade" placeholder="Quantidade de memórias RAM" [ngClass]="{
+                <input type="number" class="form-control" id="RAMquantidade" formControlName="RAMquantidade" placeholder="Quantidade de memórias RAM" max="10" [ngClass]="{
             'is-invalid': submitted && hasError('RAMquantidade')
           }" />
                 <div class="invalid-feedback" *ngIf="
@@ -173,7 +159,8 @@
     </div>
     <div style="margin-top: 10px; margin-bottom: 50px;">
         <button type="sumit" class="btn btn-primary" (click)="onSubmit()">
-      <div *ngIf="!updatedFormulario">Adicionar novo computador</div><div *ngIf="updatedFormulario">Salvar</div>
+      <div *ngIf="!updatedFormulario">Adicionar novo computador</div>
+      <div *ngIf="updatedFormulario">Salvar</div>
     </button>
         <button type="button" class="btn btn-danger" (click)="onCancel()">
       Cancelar
@@ -184,6 +171,5 @@
         Voltar
       </button>
         </a>
-
     </div>
 </form>
