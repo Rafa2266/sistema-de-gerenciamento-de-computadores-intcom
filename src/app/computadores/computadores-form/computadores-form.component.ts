@@ -74,6 +74,7 @@ export class ComputadoresFormComponent implements OnInit {
     this.submitted = true;
     console.log(this.form.value);
     if (this.form.valid) {
+      this.form.value.numeroDeSerie= this.form.value.numeroDeSerie.toUpperCase();
       if (this.form.value.id) {
         if (
           !(this.VerificarNumeroDeSerieUpdate(
