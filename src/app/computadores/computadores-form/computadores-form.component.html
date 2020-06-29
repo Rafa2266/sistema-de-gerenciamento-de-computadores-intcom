@@ -72,6 +72,11 @@
           ">
                     Informe quantas memórias RAM existem no computador
                 </div>
+                <div class="invalid-feedback" *ngIf="
+                hasError('RAMquantidade') && hasError('RAMquantidade')['max'] 
+              ">
+                    Número inválido!!!
+                </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="RAMcapacidadeTotal"> Capacidade Total(GB):</label>
@@ -83,6 +88,11 @@
             hasError('RAMcapacidadeTotal')['required']
           ">
                     Informe a capacidade total das memórias RAM
+                </div>
+                <div class="invalid-feedback" *ngIf="
+                hasError('RAMcapacidadeTotal') && hasError('RAMcapacidadeTotal')['max'] 
+              ">
+                    Número inválido!!!
                 </div>
             </div>
         </div>
@@ -101,6 +111,11 @@
           ">
                     Informe a quantidade de HDs
                 </div>
+                <div class="invalid-feedback" *ngIf="
+                hasError('HDquantidade') && hasError('HDquantidade')['max']
+              ">
+                    Número inválido!!!
+                </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="HDcapacidadeTotal"> Capacidade Total(TB):</label>
@@ -112,6 +127,11 @@
             hasError('HDcapacidadeTotal')['required']
           ">
                     Informe a capacidade total dos HDs
+                </div>
+                <div class="invalid-feedback" *ngIf="
+                hasError('HDcapacidadeTotal') && hasError('HDcapacidadeTotal')['max'] 
+              ">
+                    Número inválido!!!
                 </div>
             </div>
         </div>
@@ -143,6 +163,11 @@
             hasError('processadorVelocidade')['required']
           ">
                     Informe a velocidade do processador
+                </div>
+                <div class="invalid-feedback" *ngIf="
+                hasError('processadorVelocidade') && hasError('processadorVelocidade')['max'] 
+              ">
+                    Número inválido!!!
                 </div>
             </div>
         </div>

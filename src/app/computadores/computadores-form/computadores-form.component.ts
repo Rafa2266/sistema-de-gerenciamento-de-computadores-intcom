@@ -43,14 +43,14 @@ export class ComputadoresFormComponent implements OnInit {
       numeroDeSerie: [null, [Validators.required]],
       placaMaeMarca: [null, [Validators.required]],
       placaMaeModelo: [null, [Validators.required]],
-      RAMquantidade: [null, [Validators.required]],
-      RAMcapacidadeTotal: [null, [Validators.required]],
-      HDquantidade: [null, [Validators.required]],
-      HDcapacidadeTotal: [null, [Validators.required]],
+      RAMquantidade: [null, [Validators.required,Validators.max(100),Validators.min(1)]],
+      RAMcapacidadeTotal: [null, [Validators.required,Validators.max(1000),Validators.min(1)]],
+      HDquantidade: [null, [Validators.required,Validators.max(100),Validators.min(1)]],
+      HDcapacidadeTotal: [null, [Validators.required,Validators.max(1000),Validators.min(1)]],
       fonteMarca: [null, [Validators.required]],
       fonteModelo: [null, [Validators.required]],
       processadorMarca: [null, [Validators.required]],
-      processadorVelocidade: [null, [Validators.required]],
+      processadorVelocidade: [null, [Validators.required,Validators.max(1000),Validators.min(1)]],
     });
   }
   updateForm(computador) {
