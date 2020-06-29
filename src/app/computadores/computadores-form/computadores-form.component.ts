@@ -46,7 +46,7 @@ export class ComputadoresFormComponent implements OnInit {
       RAMquantidade: [null, [Validators.required,Validators.max(100),Validators.min(1)]],
       RAMcapacidadeTotal: [null, [Validators.required,Validators.max(1000),Validators.min(1)]],
       HDquantidade: [null, [Validators.required,Validators.max(100),Validators.min(1)]],
-      HDcapacidadeTotal: [null, [Validators.required,Validators.max(1000),Validators.min(1)]],
+      HDcapacidadeTotal: [null, [Validators.required,Validators.max(1000),Validators.min(0.25)]],
       fonteMarca: [null, [Validators.required]],
       fonteModelo: [null, [Validators.required]],
       processadorMarca: [null, [Validators.required]],
@@ -85,7 +85,8 @@ export class ComputadoresFormComponent implements OnInit {
           this.service.update(this.form.value).subscribe(
             (success) => {
               this.modal.showAlertSuccess('Registro atualizado com sucesso');
-              this.location.back();
+              this.location.back(); 
+              this.updatedFormulario = false;
             },
             (error) => {
               this.modal.showAlertDanger(
@@ -94,7 +95,7 @@ export class ComputadoresFormComponent implements OnInit {
             },
             () => console.log('update completo')
           );
-          this.updatedFormulario = false;
+         
         } else {
           this.modal.showAlertDanger('Número de série já existente');
         }

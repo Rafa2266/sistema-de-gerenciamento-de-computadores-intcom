@@ -16,7 +16,7 @@
     },
     {
       "id": 2,
-      "numeroDeSerie": "123WER5897",
+      "numeroDeSerie": "123WER5898",
       "placaMaeMarca": "AMD",
       "placaMaeModelo": "GigaByte",
       "RAMquantidade": 1,
@@ -57,20 +57,6 @@
       "processadorVelocidade": 5
     },
     {
-      "numeroDeSerie": "12131SDF09",
-      "placaMaeMarca": "NVDIA",
-      "placaMaeModelo": "GTX-900",
-      "RAMquantidade": 7,
-      "RAMcapacidadeTotal": 7,
-      "HDquantidade": 7,
-      "HDcapacidadeTotal": 7,
-      "fonteMarca": "DERT",
-      "fonteModelo": "XTC98",
-      "processadorMarca": "AMD",
-      "processadorVelocidade": 7.9,
-      "id": 8
-    },
-    {
       "id": 9,
       "numeroDeSerie": "12131SDGT6",
       "placaMaeMarca": "NVDIA",
@@ -89,8 +75,8 @@
       "numeroDeSerie": "12131SD677",
       "placaMaeMarca": "NVDIA",
       "placaMaeModelo": "GTX-900",
-      "RAMquantidade": 1,
-      "RAMcapacidadeTotal": 2,
+      "RAMquantidade": 2,
+      "RAMcapacidadeTotal": 8,
       "HDquantidade": 2,
       "HDcapacidadeTotal": 4,
       "fonteMarca": "Corsair",
@@ -139,6 +125,20 @@
       "fonteModelo": "XTC98",
       "processadorMarca": "4",
       "processadorVelocidade": 2
+    },
+    {
+      "id": 15,
+      "numeroDeSerie": "123WERD67987",
+      "placaMaeMarca": "NVDIA",
+      "placaMaeModelo": "GigaByte",
+      "RAMquantidade": 1,
+      "RAMcapacidadeTotal": 2,
+      "HDquantidade": 1,
+      "HDcapacidadeTotal": 4,
+      "fonteMarca": "Corsair",
+      "fonteModelo": "CX650",
+      "processadorMarca": "Intel",
+      "processadorVelocidade": 3.4
     }
   ]
 }

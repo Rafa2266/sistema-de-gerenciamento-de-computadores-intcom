@@ -72,10 +72,11 @@
           ">
                     Informe quantas memórias RAM existem no computador
                 </div>
-                <div class="invalid-feedback" *ngIf="
-                hasError('RAMquantidade') && hasError('RAMquantidade')['max'] 
-              ">
-                    Número inválido!!!
+                <div class="invalid-feedback" *ngIf="hasError('RAMquantidade') && hasError('RAMquantidade')['max']">
+                    Número muito alto!!!
+                </div>
+                <div class="invalid-feedback" *ngIf="hasError('RAMquantidade') && hasError('RAMquantidade')['min']">
+                    Número muito baixo!!!
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -90,9 +91,16 @@
                     Informe a capacidade total das memórias RAM
                 </div>
                 <div class="invalid-feedback" *ngIf="
-                hasError('RAMcapacidadeTotal') && hasError('RAMcapacidadeTotal')['max'] 
-              ">
-                    Número inválido!!!
+            hasError('RAMcapacidadeTotal') &&
+            hasError('RAMcapacidadeTotal')['min']
+          ">
+                    Número muito baixo!!!
+                </div>
+                <div class="invalid-feedback" *ngIf="
+            hasError('RAMcapacidadeTotal') &&
+            hasError('RAMcapacidadeTotal')['max']
+          ">
+                    Número muito alto!!!
                 </div>
             </div>
         </div>
@@ -111,12 +119,15 @@
           ">
                     Informe a quantidade de HDs
                 </div>
-                <div class="invalid-feedback" *ngIf="
-                hasError('HDquantidade') && hasError('HDquantidade')['max']
-              ">
-                    Número inválido!!!
+                <div class="invalid-feedback" *ngIf="hasError('HDquantidade') && hasError('HDquantidade')['max']">
+                    Número muito alto!!!
+                </div>
+                <div class="invalid-feedback" *ngIf="hasError('HDquantidade') && hasError('HDquantidade')['min']">
+                    Número muito baixo!!!
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <label for="HDcapacidadeTotal"> Capacidade Total(TB):</label>
                 <input type="number" class="form-control" id="HDcapacidadeTotal" formControlName="HDcapacidadeTotal" placeholder="Capcidade total dos HDs em TB" [ngClass]="{
@@ -129,9 +140,16 @@
                     Informe a capacidade total dos HDs
                 </div>
                 <div class="invalid-feedback" *ngIf="
-                hasError('HDcapacidadeTotal') && hasError('HDcapacidadeTotal')['max'] 
-              ">
-                    Número inválido!!!
+            hasError('HDcapacidadeTotal') &&
+            hasError('HDcapacidadeTotal')['max']
+          ">
+                    Número muito alto!!!
+                </div>
+                <div class="invalid-feedback" *ngIf="
+            hasError('HDcapacidadeTotal') &&
+            hasError('HDcapacidadeTotal')['min']
+          ">
+                    Número muito baixo!!!
                 </div>
             </div>
         </div>
@@ -165,9 +183,16 @@
                     Informe a velocidade do processador
                 </div>
                 <div class="invalid-feedback" *ngIf="
-                hasError('processadorVelocidade') && hasError('processadorVelocidade')['max'] 
-              ">
-                    Número inválido!!!
+            hasError('processadorVelocidade') &&
+            hasError('processadorVelocidade')['max']
+          ">
+                    Número muito alto!!!
+                </div>
+                <div class="invalid-feedback" *ngIf="
+            hasError('processadorVelocidade') &&
+            hasError('processadorVelocidade')['min']
+          ">
+                    Número muito baixo!!!
                 </div>
             </div>
         </div>
